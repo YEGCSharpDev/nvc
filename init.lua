@@ -1,6 +1,7 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
-
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -38,18 +39,13 @@ end)
 
 vim.opt.clipboard = "unnamedplus"
 
-if vim.fn.has('wsl') == 1 then
+if vim.fn.has "wsl" == 1 then
+  vim.api.nvim_create_autocmd("TextYankPost", {
 
-vim.api.nvim_create_autocmd('TextYankPost', {
+    group = vim.api.nvim_create_augroup("Yank", { clear = true }),
 
-group = vim.api.nvim_create_augroup('Yank', { clear = true }),
-
-callback = function()
-
-vim.fn.system('clip.exe', vim.fn.getreg('"'))
-
-end,
-
-})
-
+    callback = function()
+      vim.fn.system("clip.exe", vim.fn.getreg '"')
+    end,
+  })
 end
