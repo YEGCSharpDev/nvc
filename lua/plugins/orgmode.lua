@@ -7,7 +7,7 @@ return {
       org_default_notes_file = "~/work/wiki/refile.org",
       org_todo_keywords = { "TODO(t)", "WAITING(w)", "NEXT(n)", "INPROGRESS(p)", "BLOCKED(b)", "|", "DONE(d)" },
       org_todo_keyword_faces = {
-        TODO = ":foreground #000000 :background red", -- overrides builtin color for `TODO` keyword
+        TODO = ":foreground #000000 :background red",
         WAITING = ":foreground #000000 :background #cc6216",
         NEXT = ":foreground #000000 :background #a911cf :weight bold",
         INPROGRESS = ":foreground #000000 :background #16ccc6 :weight bold",
