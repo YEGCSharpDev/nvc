@@ -14,6 +14,7 @@ return {
         DONE = ":foreground #000000 :background green :slant italic :underline on",
         BLOCKED = ":foreground #000000 :background #b31414 :weight bold :slant italic :underline on",
       },
+      org_archive_location = "~/work/archive/graveyard/todoarchive.org::",
       org_log_done = "note",
       org_log_into_drawer = "LOGBOOK",
       org_adapt_indentation = true,
@@ -25,7 +26,13 @@ return {
           template = "* TODO %?\n %u",
           target = "~/work/todo.org",
         },
-      j = {
+        p = {
+          description = "Work Periphery/Personal Todo",
+          reversed = true,
+          template = "* TODO %?\n %u",
+          target = "~/work/nonworktodo.org",
+        },
+        j = {
           description = "Daily Journal",
           template = "*%?",
           target = "~/work/journal/%<%Y>/%<%V>/%<%Y-%m-%d>-%<%A>.org",
