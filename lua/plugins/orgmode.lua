@@ -37,6 +37,11 @@ return {
           template = "*%?",
           target = "~/work/journal/%<%Y>/%<%V>/%<%Y-%m-%d>-%<%A>.org",
         },
+        s = {
+          description = "Softi",
+          template = "* SOFTI \n** Successes \n - n/a \n** Opportunities \n  - n/a \n** Failures \n  - n/a \n** Threats\n - n/a \n** Issues \n  - n/a",
+          target = "~/work/SOFTI/%?.org",
+        },
       },
     }
   end,
