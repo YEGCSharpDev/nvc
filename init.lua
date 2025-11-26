@@ -50,3 +50,25 @@ if vim.fn.has "wsl" == 1 then
     end,
   })
 end
+
+vim.keymap.set('n', '<Leader>oj', function()
+  -- 1. Construct the path based on your template: 
+  -- ~/work/journal/%<%Y>/%<%V>/%<%Y-%m-%d>-%<%A>.org
+  -- Lua os.date tokens: %Y=Year, %V=Week Number, %A=Day Name (Monday)
+  
+  local path = os.date('~/work/journal/%Y/%V/%Y-%m-%d-%A.org')
+
+  -- 2. Expand the '~' to the actual home directory
+  path = vim.fn.expand(path)
+
+  -- 3. Create the directory structure if it's a new week and doesn't exist yet
+  local dir = vim.fn.fnamemodify(path, ':h')
+  if vim.fn.isdirectory(dir) == 0 then
+    vim.fn.mkdir(dir, 'p')
+  end
+
+  -- 4. Open the file
+  vim.cmd.edit(path)
+end, { desc = "Open Today's Journal" })
+
+
