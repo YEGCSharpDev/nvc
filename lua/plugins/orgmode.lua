@@ -22,7 +22,7 @@ return {
       org_log_done = "note",
       org_log_into_drawer = "LOGBOOK",
       org_adapt_indentation = true,
-      win_split_mode = "vertical",
+      win_split_mode = "float",
       org_id_method = "uuid",
       org_id_link_to_org_use_id = true,
       org_capture_templates = {
